@@ -1,0 +1,9 @@
+.git
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+**/.gradle
+**/build
+node_modules
+*.log

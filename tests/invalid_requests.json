@@ -1,0 +1,569 @@
+[
+  {
+    "name": "missing_card_number",
+    "request": {
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "null_card_number",
+    "request": {
+      "card_number": null,
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "missing_expiry_month",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "null_expiry_month",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": null,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "missing_expiry_year",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "null_expiry_year",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": null,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "missing_currency",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "null_currency",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": null,
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "missing_amount",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "null_amount",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": null,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "missing_cvv",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100
+    }
+  },
+  {
+    "name": "null_cvv",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": null
+    }
+  },
+  {
+    "name": "invalid_card_number_0",
+    "request": {
+      "card_number": "1111111111111",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_1",
+    "request": {
+      "card_number": "11111111111111111111",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_2",
+    "request": {
+      "card_number": "aaaaaaaaaaaaaaaa",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_3",
+    "request": {
+      "card_number": "１２３４５６７８９０１２３４５６",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_4",
+    "request": {
+      "card_number": 2222405343240001,
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_5",
+    "request": {
+      "card_number": true,
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_card_number_6",
+    "request": {
+      "card_number": "11111111111111\n",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_cvv_0",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "12"
+    }
+  },
+  {
+    "name": "invalid_cvv_1",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "12345"
+    }
+  },
+  {
+    "name": "invalid_cvv_2",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "1a3"
+    }
+  },
+  {
+    "name": "invalid_cvv_3",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": 123
+    }
+  },
+  {
+    "name": "invalid_cvv_4",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": true
+    }
+  },
+  {
+    "name": "invalid_cvv_5",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "１２３"
+    }
+  },
+  {
+    "name": "invalid_cvv_6",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "123\n"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_0",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 0,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_1",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 13,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_2",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": -1,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_3",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": "12",
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_4",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12.0,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_month_5",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": true,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_0",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 0,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_1",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 10000,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_2",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2020,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_3",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": "2099",
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_4",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099.0,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_expiry_year_5",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": true,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_0",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "CAD",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_1",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "gbp",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_2",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GB",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_3",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBPP",
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_4",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": 123,
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_currency_5",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": true,
+      "amount": 100,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_0",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 0,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_1",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": -1,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_2",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 1.5,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_3",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 1.0,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_4",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": "100",
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_5",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": true,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "invalid_amount_6",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 9223372036854775808,
+      "cvv": "012"
+    }
+  },
+  {
+    "name": "unknown_field",
+    "request": {
+      "card_number": "2222405343240001",
+      "expiry_month": 12,
+      "expiry_year": 2099,
+      "currency": "GBP",
+      "amount": 100,
+      "cvv": "012",
+      "ammount": 100
+    }
+  }
+]

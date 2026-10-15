@@ -1,0 +1,8 @@
+{
+  "name": "checkout-bank-simulator",
+  "private": true,
+  "scripts": {
+    "bank": "mb --configfile imposters/bank_simulator.ejs --allowInjection --localOnly --loglevel error --logfile /tmp/checkout-mountebank.log"
+  },
+  "devDependencies": {"mountebank": "2.8.1"}
+}

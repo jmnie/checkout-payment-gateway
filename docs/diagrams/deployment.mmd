@@ -1,0 +1,9 @@
+flowchart LR
+    Client["Local client"] -->|localhost:8090| Java["Java container · :8090"]
+    Client -->|localhost:8091| Python["Python container · :8090"]
+    subgraph Compose["Compose network"]
+        Java -->|BANK_URL=http://bank:8080| Bank["bank:8080 · Mountebank 2.8.1"]
+        Python -->|BANK_URL=http://bank:8080| Bank
+        Fixtures["imposters/ · read-only mount"] --> Bank
+    end
+    Admin["Local test tools"] -->|localhost:2525| Bank

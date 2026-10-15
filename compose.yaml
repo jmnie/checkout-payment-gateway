@@ -1,0 +1,38 @@
+services:
+  bank:
+    image: bbyars/mountebank:2.8.1
+    command: --configfile /imposters/bank_simulator.ejs --allowInjection --loglevel error
+    volumes:
+      - ./imposters:/imposters:ro
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:2525:2525"
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:2525/imposters',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 3s
+      timeout: 2s
+      retries: 20
+  java:
+    build:
+      context: .
+      dockerfile: java/Dockerfile
+    environment:
+      BANK_URL: http://bank:8080
+      BANK_TIMEOUT_SECONDS: "2"
+    ports:
+      - "127.0.0.1:8090:8090"
+    depends_on:
+      bank:
+        condition: service_healthy
+  python:
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+    environment:
+      BANK_URL: http://bank:8080
+      BANK_TIMEOUT_SECONDS: "2"
+    ports:
+      - "127.0.0.1:8091:8090"
+    depends_on:
+      bank:
+        condition: service_healthy

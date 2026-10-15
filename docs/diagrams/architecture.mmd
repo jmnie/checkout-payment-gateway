@@ -1,0 +1,14 @@
+flowchart TB
+    Merchant["Merchant client"] --> Filter["RequestLog: request ID and timing"]
+    subgraph Gateway["Java gateway · :8090"]
+        Filter --> Routes["HTTP routing"]
+        Routes --> API["PaymentController + PaymentRequest validation"]
+        Routes --> Support["GET /health and /openapi.json"]
+        API --> Service["PaymentService"]
+        API --> Errors["ApiErrors: 400 / 415 / 502 / 503 / 504"]
+        Service -->|Create only| Client["BankClient"]
+        Service -->|Save or lookup| Store[("ConcurrentHashMap: safe Payment records")]
+    end
+    Client -->|POST /payments| Bank["Official bank simulator · :8080"]
+    Filter -.-> Logs["stdout: HTTP and bank events<br/>request ID, result, duration"]
+    Client -.-> Logs

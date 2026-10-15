@@ -1,0 +1,17 @@
+flowchart TD
+    Request["Merchant request"] --> ID["Generate X-Request-Id; start timing"]
+    ID --> Route{"Payment route"}
+    Route -->|POST /payments| Media{"application/json?"}
+    Media -->|No| Unsupported["415: no bank call or record"]
+    Media -->|Yes| Valid{"Valid JSON and payment fields?"}
+    Valid -->|No| Reject["400 Rejected: no bank call or record"]
+    Valid -->|Yes| Call["BankClient: expiry as MM/YYYY; POST to bank"]
+    Call --> Result{"Bank result"}
+    Result -->|Authorized or Declined| Save["Generate UUID; store decision, last four digits, expiry, currency, amount"]
+    Save --> Created["201 + Location + safe Payment"]
+    Result -->|Unavailable / timeout / invalid response| Failure["503 / 504 / 502; no record; no application retry"]
+    Route -->|GET /payments/id| UUID{"Valid UUID?"}
+    UUID -->|No| Invalid["400 InvalidRequest"]
+    UUID -->|Yes| Lookup{"Payment in this instance?"}
+    Lookup -->|No| Missing["404 PaymentNotFound"]
+    Lookup -->|Yes| Found["200 + stored safe Payment; no bank call"]
