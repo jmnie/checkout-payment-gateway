@@ -27,7 +27,7 @@ shasum -a 256 -c docs/SOURCE_CHECKSUMS.sha256
 
 To force a clean Java build, run `cd java && ./gradlew clean test bootJar --no-daemon`.
 
-The [Verify workflow](../.github/workflows/verify.yml) builds both Docker images, waits for healthy containers, runs 165 HTTP cases plus one log check, uploads reports, and stops the stack. Results are available in [GitHub Actions](https://github.com/jmnie/checkout-payment-gateway/actions).
+The [Verify workflow](../.github/workflows/verify.yml) builds both Docker images, waits for healthy containers, runs 165 HTTP cases plus one log check, uploads reports, and stops the stack. [Run 38699781866](https://github.com/jmnie/checkout-payment-gateway/actions/runs/38699781866) passed on code commit `d3577ffac7797441041742b60ef1863c63b8896a`, including both container builds, health checks, 165 HTTP cases and one log check. This verification entry is a documentation-only update to that tested commit.
 
 ## Scope
 
