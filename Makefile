@@ -1,4 +1,4 @@
-.PHONY: test python-test java-test e2e up down
+.PHONY: test python-test java-test e2e up up-java status logs down
 
 test: python-test java-test
 
@@ -13,7 +13,16 @@ e2e: test
 	uv run --project python python scripts/e2e.py
 
 up:
-	docker compose up --build --wait
+	docker compose up --build --wait --wait-timeout 120
+
+up-java:
+	docker compose up --build --wait --wait-timeout 120 java
+
+status:
+	docker compose ps
+
+logs:
+	docker compose logs --tail=50 java bank
 
 down:
 	docker compose down

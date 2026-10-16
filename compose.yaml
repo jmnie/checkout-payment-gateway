@@ -8,7 +8,7 @@ services:
       - "127.0.0.1:8080:8080"
       - "127.0.0.1:2525:2525"
     healthcheck:
-      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:2525/imposters',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:2525/imposters/8080',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
       interval: 3s
       timeout: 2s
       retries: 20

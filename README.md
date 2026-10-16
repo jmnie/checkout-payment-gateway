@@ -25,6 +25,8 @@ curl -i "http://localhost:8090/payments/<id>"
 
 - Other payloads: [declined](demo/declined.json) → `201 Declined`; [rejected](demo/rejected.json) → `400`; [bank unavailable](demo/bank-unavailable.json) → `503`.
 - Run both versions: `docker compose up --build --wait`. Stop: `docker compose down`.
+- [Compose config](compose.yaml): Java depends on the bank; Python is optional when starting `java`.
+- Make shortcuts: `make up-java`, `make status`, `make logs`, `make down`. `make up` starts both versions.
 - Localhost ports: Java `8090`, Python `8091`, bank `8080`, simulator admin `2525`.
 
 ## API

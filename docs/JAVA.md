@@ -72,6 +72,8 @@ curl -i http://localhost:8090/payments \
 
 Copy the returned `Location` into a GET against `http://localhost:8090`. To start both implementations, use `docker compose up --build --wait`. Python is exposed at `http://localhost:8091`.
 
+The root [compose.yaml](../compose.yaml) defines all three services. `make up-java` starts only Java and its bank dependency, with a 120-second health wait. `make up` starts both gateways. The bank check requires the configured port-8080 imposter to exist, not just a responding admin server.
+
 ![Compose deployment](diagrams/deployment.png)
 
 The Java image builds an executable JAR with JDK 17 and runs it on a JRE as UID 10001. Python also runs as UID 10001. Both wait for the bank's health check before starting. Their own health checks probe application liveness. The simulator's admin API and all published ports bind to localhost.
@@ -89,6 +91,10 @@ docker compose ps
 docker compose logs --tail=50 java bank
 docker compose down
 ```
+
+Shortcuts: `make status`, `make logs` (last 50 Java/bank log lines), and `make down`.
+
+If startup reports an occupied port, check `docker compose ps` and `lsof -nP -iTCP:8090 -sTCP:LISTEN`. A locally running JAR uses the same port as Compose; run one stack at a time. Stopping or recreating a gateway loses its in-memory payments, so create a new payment before demonstrating GET.
 
 Without Docker, start the simulator with `npm ci --ignore-scripts` and `npm run bank`. In another terminal, run `cd java && ./gradlew bootRun`, or run `java -jar java/build/libs/payment-gateway.jar` from the repository root after building.
 
